@@ -1,9 +1,10 @@
 /* 🌈 Global Styles */
-body {
-  font-family: 'Quicksand', sans-serif;
-  background: linear-gradient(to right, #fceabb, #f8b500);
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(to right, #fceabb, #f8b500);
   color: #333;
 }
 
@@ -108,12 +109,10 @@ footer {
 img {
   animation: float 3s ease-in-out infinite;
 }
-/* 🗺️ Ensure map renders correctly */
+
+/* 🌍 Fix for Leaflet map rendering */
 #map {
   height: 300px;
   width: 100%;
-}
-
-html, body {
-  height: 100%;
+  z-index: 0;
 }
