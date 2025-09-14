@@ -59,6 +59,76 @@ function triggerConfetti() {
 }
 
 function showSuccessMessage(text) {
+// DOM Elements
+const form = document.getElementById('form');
+const itemName = document.getElementById('itemName');
+const itemDesc = document.getElementById('itemDesc');
+const location = document.getElementById('location');
+const itemsList = document.getElementById('items');
+const exportBtn = document.getElementById('exportBtn');
+const printBtn = document.getElementById('printBtn');
+const donorNameInput = document.getElementById('donorName');
+const noteForm = document.getElementById('noteForm');
+const noteText = document.getElementById('noteText');
+const notesList = document.getElementById('notesList');
+const chatWindow = document.getElementById('chatWindow');
+const chatInput = document.getElementById('chatInput');
+const sendBtn = document.getElementById('sendBtn');
+const voiceBtn = document.getElementById('voiceBtn');
+
+let userActions = { donations: 0 };
+
+// 🟢 Donation Submission
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name = itemName.value.trim();
+  const desc = itemDesc.value.trim();
+  const loc = location.value.trim();
+
+  if (name && desc && loc) {
+    const item = { name, desc, location: loc, timestamp: new Date().toLocaleString() };
+    addItemToList(item);
+    form.reset();
+    userActions.donations++;
+    triggerConfetti();
+    addMapMarker(loc, name, desc);
+    showSuccessMessage("🎉 Donation added successfully!");
+  }
+});
+
+// 🟢 Add Item with Animation
+function addItemToList(item) {
+  const li = document.createElement('li');
+  li.innerHTML = `
+    <strong>${item.name}</strong><br/>
+    <em>${item.desc}</em><br/>
+    📍 ${item.location}<br/>
+    🕒 ${item.timestamp}
+  `;
+  li.style.opacity = '0';
+  li.style.transform = 'translateY(20px)';
+  itemsList.prepend(li);
+
+  setTimeout(() => {
+    li.style.transition = 'all 0.6s ease';
+    li.style.opacity = '1';
+    li.style.transform = 'translateY(0)';
+  }, 50);
+
+  li.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// 🎉 Confetti Celebration
+function triggerConfetti() {
+  if (typeof confetti === 'function') {
+    confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+  } else {
+    console.warn("Confetti library not loaded.");
+  }
+}
+
+// ✅ Success Message
+function showSuccessMessage(text) {
   const msg = document.createElement('div');
   msg.textContent = text;
   msg.style.position = 'fixed';
@@ -75,7 +145,13 @@ function showSuccessMessage(text) {
   setTimeout(() => msg.remove(), 3000);
 }
 
-// Certificate Export
+// 🗺️ Map Marker (Placeholder)
+function addMapMarker(location, name, desc) {
+  console.log(`Map marker added for ${name} at ${location}: ${desc}`);
+  // Replace with actual map logic if using Leaflet or Google Maps
+}
+
+// 🧾 Certificate Export
 exportBtn.addEventListener('click', () => {
   const donorName = donorNameInput.value.trim() || "Anonymous";
   const certificate = `
@@ -97,7 +173,7 @@ exportBtn.addEventListener('click', () => {
   link.click();
 });
 
-// Print Certificate
+// 🖨️ Print Certificate
 printBtn.addEventListener('click', () => {
   const donorName = donorNameInput.value.trim() || "Anonymous";
   const htmlContent = `
@@ -159,7 +235,7 @@ printBtn.addEventListener('click', () => {
   printWindow.document.close();
 });
 
-// Kindness Wall
+// 💬 Kindness Wall
 noteForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const note = noteText.value.trim();
@@ -171,7 +247,18 @@ noteForm.addEventListener('submit', (e) => {
   }
 });
 
-// Chatbot
+// 🤖 Chatbot
 sendBtn.addEventListener('click', () => {
   const userMsg = chatInput.value.trim();
   if (userMsg) {
+    const msg = document.createElement('div');
+    msg.textContent = `🗨️ You: ${userMsg}`;
+    chatWindow.appendChild(msg);
+    chatInput.value = '';
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+  }
+});
+
+voiceBtn.addEventListener('click', () => {
+  alert("🎤 Voice input activated (placeholder)");
+});
