@@ -5,56 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KindKart</title>
   <link rel="stylesheet" href="styles.css" />
-  <!-- 🎉 Confetti Library -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-  <!-- 🗺️ Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
-  <h1>KindKart</h1>
-  <p>Turning forgotten things into unforgettable kindness 💖</p>
+  <header>
+    <h1>KindKart</h1>
+    <p>Turning forgotten things into unforgettable kindness 💖</p>
+  </header>
 
-  <h2>List an Item</h2>
-  <form id="form">
-    <input type="text" id="itemName" placeholder="Item Name" required />
-    <input type="text" id="itemDesc" placeholder="Short Description" required />
-    <input type="text" id="location" placeholder="Your City" required />
-    <button type="submit" id="donateBtn">Donate</button>
-  </form>
+  <section class="card">
+    <h2>List an Item</h2>
+    <form id="form">
+      <input type="text" id="itemName" placeholder="Item Name" required />
+      <input type="text" id="itemDesc" placeholder="Short Description" required />
+      <input type="text" id="location" placeholder="Your City" required />
+      <button type="submit" id="donateBtn">Donate</button>
+    </form>
+    <ul id="items"></ul>
+  </section>
 
-  <ul id="items"></ul>
+  <section class="card">
+    <h2>🗺️ Donation Map</h2>
+    <div id="map" style="height: 300px;"></div>
+  </section>
 
-  <!-- 🗺️ Donation Map -->
-  <h2>🗺️ Donation Map</h2>
-  <div id="map" style="height: 300px;"></div>
+  <section class="card">
+    <h2>🧾 Kindness Certificate</h2>
+    <input type="text" id="donorName" placeholder="Enter your name for certificate" />
+    <button id="exportBtn">Download Certificate</button>
+    <button id="printBtn">Print Certificate</button>
+  </section>
 
-  <h2>🧾 Kindness Certificate</h2>
-  <input type="text" id="donorName" placeholder="Enter your name for certificate" />
-  <button id="exportBtn">Download Certificate</button>
-  <button id="printBtn">Print Certificate</button>
+  <section class="card">
+    <h2>💬 Kindness Wall</h2>
+    <form id="noteForm">
+      <textarea id="noteText" placeholder="Leave a thank-you note..." required></textarea>
+      <button type="submit" id="postNoteBtn">Post Note</button>
+    </form>
+    <ul id="notesList"></ul>
+  </section>
 
-  <h2>💬 Kindness Wall</h2>
-  <form id="noteForm">
-    <textarea id="noteText" placeholder="Leave a thank-you note..." required></textarea>
-    <button type="submit" id="postNoteBtn">Post Note</button>
-  </form>
-  <ul id="notesList"></ul>
-
-  <h2>KindKart Assistant 🤖</h2>
-  <div id="chatWindow" style="border: 1px solid #ccc; padding: 10px; height: 150px; overflow-y: auto;"></div>
-  <input type="text" id="chatInput" placeholder="Ask me anything..." />
-  <button id="sendBtn">Send</button>
-  <button id="voiceBtn">🎤 Speak</button>
+  <section class="card">
+    <h2>KindKart Assistant 🤖</h2>
+    <div id="chatWindow"></div>
+    <input type="text" id="chatInput" placeholder="Ask me anything..." />
+    <button id="sendBtn">Send</button>
+    <button id="voiceBtn">🎤 Speak</button>
+  </section>
 
   <footer>
     <p>Made with ❤️ by Minu Antony – 18-year-old BTech 2nd-year student</p>
     <p>📧 Reach out: minuinspires@gmail.com</p>
   </footer>
 
-  <!-- 🗺️ Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
-
 
