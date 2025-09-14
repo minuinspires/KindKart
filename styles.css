@@ -108,3 +108,12 @@ footer {
 img {
   animation: float 3s ease-in-out infinite;
 }
+/* 🗺️ Ensure map renders correctly */
+#map {
+  height: 300px;
+  width: 100%;
+}
+
+html, body {
+  height: 100%;
+}
