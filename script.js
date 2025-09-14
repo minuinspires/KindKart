@@ -196,4 +196,24 @@ noteForm.addEventListener('submit', (e) => {
   const note = noteText.value.trim();
   if (note) {
     const li = document.createElement('li');
-    li
+    li.textContent = `${note} 🕒 ${new Date().toLocaleString()}`;
+    notesList.prepend(li);
+    noteText.value = '';
+  }
+});
+
+// 🤖 Chatbot
+sendBtn.addEventListener('click', () => {
+  const userMsg = chatInput.value.trim();
+  if (userMsg) {
+    const msg = document.createElement('div');
+    msg.textContent = `🗨️ You: ${userMsg}`;
+    chatWindow.appendChild(msg);
+    chatInput.value = '';
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+  }
+});
+
+voiceBtn.addEventListener('click', () => {
+  alert("🎤 Voice input activated (placeholder)");
+});
