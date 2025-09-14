@@ -1,57 +1,40 @@
-<header>
-  <h1 class="animated-title">KindKart</h1>
-  <p class="tagline">Turning forgotten things into unforgettable kindness 💖</p>
-</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KindKart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>KindKart</h1>
+  <p>Turning forgotten things into unforgettable kindness 💖</p>
 
-<main>
-  <section id="donation-form">
-    <h2>List an Item</h2>
-    <form id="form">
-      <input type="text" id="itemName" placeholder="Item Name" required />
-      <textarea id="itemDesc" placeholder="Short Description" required></textarea>
-      <input type="text" id="location" placeholder="Your City" required />
-      <button type="submit">Donate</button>
-    </form>
-  </section>
+  <h2>List an Item</h2>
+  <input type="text" placeholder="Item Name">
+  <input type="text" placeholder="Short Description">
+  <input type="text" placeholder="Your City">
+  <button>Donate</button>
 
-  <section id="donation-list">
-    <h2>Available Donations</h2>
-    <ul id="items"></ul>
-  </section>
+  <h2>Available Donations</h2>
+  <p>🗺️ Donation Map</p>
+  <p>🧾 Kindness Certificate</p>
+  <input type="text" placeholder="Enter your name for certificate">
+  <button>Download Certificate</button>
+  <button>Print Certificate</button>
 
-  <section id="map-section">
-    <h2>🗺️ Donation Map</h2>
-    <div id="map" style="height: 400px;"></div>
-  </section>
+  <h2>💬 Kindness Wall</h2>
+  <textarea placeholder="Leave a thank-you note..."></textarea>
+  <button>Post Note</button>
 
-  <section id="certificate">
-    <h2>🧾 Kindness Certificate</h2>
-    <input type="text" id="donorName" placeholder="Enter your name for certificate" required />
-    <button id="exportBtn">Download Certificate</button>
-    <button id="printBtn">Print Certificate</button>
-  </section>
+  <h2>KindKart Assistant 🤖</h2>
+  <p>Ask me anything...</p>
+  <button>Send</button>
+  <button>🎤 Speak</button>
 
-  <section id="kindnessWall">
-    <h2>💬 Kindness Wall</h2>
-    <form id="noteForm">
-      <textarea id="noteText" placeholder="Leave a thank-you note..." required></textarea>
-      <button type="submit">Post Note</button>
-    </form>
-    <ul id="notesList"></ul>
-  </section>
-
-  <section id="chatbot">
-    <h2>KindKart Assistant 🤖</h2>
-    <div id="chatWindow"></div>
-    <input type="text" id="chatInput" placeholder="Ask me anything..." />
-    <button id="sendBtn">Send</button>
-    <button id="voiceBtn">🎤 Speak</button>
-  </section>
-</main>
-
-<footer>
-  <p class="creator-credit">
-    Made with ❤️ by <strong>Minu Antony</strong> – 18-year-old BTech 2nd-year student<br>
-    📧 Reach out: <a href="mailto:minuinspires@gmail.com">minuinspires@gmail.com</a>
-  </p>
-</footer>
+  <footer>
+    <p>Made with ❤️ by Minu Antony – 18-year-old BTech 2nd-year student</p>
+    <p>📧 Reach out: minuinspires@gmail.com</p>
+  </footer>
+</body>
+</html>
