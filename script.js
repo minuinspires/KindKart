@@ -2,7 +2,7 @@
 const form = document.getElementById('form');
 const itemName = document.getElementById('itemName');
 const itemDesc = document.getElementById('itemDesc');
-const location = document.getElementById('location');
+const locationInput = document.getElementById('location'); // ✅ Renamed
 const itemsList = document.getElementById('items');
 const exportBtn = document.getElementById('exportBtn');
 const printBtn = document.getElementById('printBtn');
@@ -71,7 +71,7 @@ form.addEventListener('submit', function(e) {
   e.preventDefault();
   const name = itemName.value.trim();
   const desc = itemDesc.value.trim();
-  const loc = location.value.trim();
+  const loc = locationInput.value.trim(); // ✅ Updated
 
   if (name && desc && loc) {
     const item = { name, desc, location: loc, timestamp: new Date().toLocaleString() };
@@ -217,3 +217,4 @@ sendBtn.addEventListener('click', () => {
 voiceBtn.addEventListener('click', () => {
   alert("🎤 Voice input activated (placeholder)");
 });
+
