@@ -1,0 +1,57 @@
+<header>
+  <h1 class="animated-title">KindKart</h1>
+  <p class="tagline">Turning forgotten things into unforgettable kindness 💖</p>
+</header>
+
+<main>
+  <section id="donation-form">
+    <h2>List an Item</h2>
+    <form id="form">
+      <input type="text" id="itemName" placeholder="Item Name" required />
+      <textarea id="itemDesc" placeholder="Short Description" required></textarea>
+      <input type="text" id="location" placeholder="Your City" required />
+      <button type="submit">Donate</button>
+    </form>
+  </section>
+
+  <section id="donation-list">
+    <h2>Available Donations</h2>
+    <ul id="items"></ul>
+  </section>
+
+  <section id="map-section">
+    <h2>🗺️ Donation Map</h2>
+    <div id="map" style="height: 400px;"></div>
+  </section>
+
+  <section id="certificate">
+    <h2>🧾 Kindness Certificate</h2>
+    <input type="text" id="donorName" placeholder="Enter your name for certificate" required />
+    <button id="exportBtn">Download Certificate</button>
+    <button id="printBtn">Print Certificate</button>
+  </section>
+
+  <section id="kindnessWall">
+    <h2>💬 Kindness Wall</h2>
+    <form id="noteForm">
+      <textarea id="noteText" placeholder="Leave a thank-you note..." required></textarea>
+      <button type="submit">Post Note</button>
+    </form>
+    <ul id="notesList"></ul>
+  </section>
+
+  <section id="chatbot">
+    <h2>KindKart Assistant 🤖</h2>
+    <div id="chatWindow"></div>
+    <input type="text" id="chatInput" placeholder="Ask me anything..." />
+    <button id="sendBtn">Send</button>
+    <button id="voiceBtn">🎤 Speak</button>
+  </section>
+</main>
+
+<footer>
+  <p class="creator-credit">
+    Made with ❤️ by <strong>Minu Antony</strong> – 18-year-old BTech 2nd-year student<br>
+    📧 Reach out: <a href="mailto:minuinspires@gmail.com">minuinspires@gmail.com</a>
+  </p>
+</footer>
