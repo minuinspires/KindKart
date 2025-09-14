@@ -1,210 +1,72 @@
 body {
-  font-family: 'Quicksand', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to right, #fceabb, #f8b500);
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
   color: #333;
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
 }
 
-/* Header */
-header {
-  background: #4caf50;
-  color: white;
-  padding: 1rem;
+h1 {
+  color: #2c7be5;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.animated-title {
-  font-family: 'Pacifico', cursive;
-  font-size: 3.5rem;
-  animation: glowBounce 2s infinite;
-  color: #fff;
-  text-shadow: 0 0 10px #fff, 0 0 20px #4caf50;
-}
-
-@keyframes glowBounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-.tagline {
-  font-size: 1.3rem;
-  margin-top: 0.5rem;
-  animation: fadePulse 3s ease-in-out infinite;
-}
-
-@keyframes fadePulse {
-  0% { opacity: 0.3; }
-  50% { opacity: 1; }
-  100% { opacity: 0.3; }
-}
-
-/* Mission */
-#mission {
-  background: #fff8dc;
-  padding: 1rem;
-  border-radius: 8px;
-  margin: 2rem auto;
-  max-width: 700px;
-  animation: slideIn 1s ease;
-}
-
-@keyframes slideIn {
-  from { opacity: 0; transform: translateX(-50px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-/* Form */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 400px;
-  margin-bottom: 2rem;
-}
-
-input, textarea, button {
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
 button {
-  background: #4caf50;
+  background-color: #2c7be5;
   color: white;
   border: none;
+  padding: 10px 15px;
+  margin: 5px 0;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  border-radius: 5px;
 }
 
 button:hover {
-  transform: scale(1.05);
+  background-color: #1a5bb8;
 }
 
-/* Donation List */
-#items {
-  list-style: none;
-  padding: 0;
-}
-
-#items li {
-  background: white;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  border-left: 5px solid #4caf50;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  animation: floatUp 1.5s ease;
-}
-
-@keyframes floatUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Map */
-#map {
-  margin-top: 1rem;
-  border: 2px solid #4caf50;
-  border-radius: 8px;
-}
-
-/* Certificate */
-#certificate {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-#exportBtn {
-  background: #fff8dc;
-  border: 2px solid gold;
-  color: #333;
-  font-weight: bold;
-  padding: 0.8rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: box-shadow 0.3s ease;
-}
-
-#exportBtn:hover {
-  box-shadow: 0 0 10px gold;
-}
-
-/* Kindness Wall */
-#kindnessWall {
-  margin-top: 2rem;
-  background: #fff;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-#notesList li {
-  animation: fadeInNote 0.6s ease;
-  margin-bottom: 0.5rem;
-}
-
-@keyframes fadeInNote {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Chatbot */
-#chatbot {
-  margin-top: 2rem;
-  background: #fff;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-#chatWindow {
-  height: 200px;
-  overflow-y: auto;
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 4px;
   border: 1px solid #ccc;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  background: #f9f9f9;
 }
 
-#chatWindow p {
-  margin: 0.5rem 0;
+ul {
+  list-style: none;
+  padding-left: 0;
 }
 
-#voiceBtn {
-  background: #ff9800;
-  color: white;
-  border: none;
-  padding: 0.6rem;
-  margin-top: 0.5rem;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Footer */
 footer {
+  margin-top: 40px;
   text-align: center;
-  padding: 1rem;
-  background: #ddd;
+  font-size: 0.9em;
+  color: #777;
 }
 
-.creator-credit {
-  font-weight: bold;
-  font-size: 1rem;
-  color: #4caf50;
-  animation: fadeInCreator 2s ease;
-}
-
-@keyframes fadeInCreator {
-  from { opacity: 0; transform: translateY(10px); }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-footer a {
-  color: #4caf50;
-  text-decoration: none;
-}
+/* 📱 Mobile Responsive */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
 
-footer a:hover {
-  text-decoration: underline;
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  #map {
+    height: 200px;
+  }
 }
