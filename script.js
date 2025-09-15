@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // 🌍 Initialize Leaflet Map
+  // 🌍 Initialize Leaflet Map with Stamen Toner Lite
   const map = L.map('map').setView([20.5937, 78.9629], 5);
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
-    maxZoom: 19
+  L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://stamen.com/">Stamen Design</a>',
+    maxZoom: 20
   }).addTo(map);
 
   // 🗺️ Add Marker to Map
@@ -165,5 +165,4 @@ document.addEventListener("DOMContentLoaded", function () {
     alert("🎤 Voice input activated (placeholder)");
   });
 });
-
 
