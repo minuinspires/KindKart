@@ -2,7 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // 🌍 Initialize Leaflet Map
   const map = L.map('map').setView([20.5937, 78.9629], 5);
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://carto.com/">CARTO</a>'
+    attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 19,
+    detectRetina: true
   }).addTo(map);
 
   // 🗺️ Add Marker to Map
@@ -164,3 +167,5 @@ document.addEventListener("DOMContentLoaded", function () {
     alert("🎤 Voice input activated (placeholder)");
   });
 });
+
+
