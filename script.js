@@ -1,22 +1,36 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // 🌍 Initialize Leaflet Map with Stamen Toner Lite
-  const map = L.map('map').setView([20.5937, 78.9629], 5);
-  L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://stamen.com/">Stamen Design</a>',
-    maxZoom: 20
-  }).addTo(map);
+  // 🌍 Initialize Mapbox
+  mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN'; // Replace with your token
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/light-v11',
+    center: [78.9629, 20.5937],
+    zoom: 4
+  });
 
-  // 🗺️ Add Marker to Map
+  // 🎖️ Add Emoji Marker with Voiceover
   function addMapMarker(location, name, desc) {
     fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(location)}`)
       .then(res => res.json())
       .then(data => {
         if (data.length > 0) {
           const { lat, lon } = data[0];
-          L.marker([lat, lon])
-            .addTo(map)
-            .bindPopup(`<strong>${name}</strong><br>${desc}<br>${location}`)
-            .openPopup();
+          const el = document.createElement('div');
+          el.className = 'emoji-marker';
+          el.textContent = '🎁';
+          el.style.fontSize = '24px';
+
+          const marker = new mapboxgl.Marker(el)
+            .setLngLat([lon, lat])
+            .setPopup(new mapboxgl.Popup().setHTML(`<strong>${name}</strong><br>${desc}<br>${location}`))
+            .addTo(map);
+
+          marker.getElement().addEventListener('click', () => {
+            const audio = new Audio('voice/kindness.mp3'); // Replace with your voice file
+            audio.play();
+          });
+
+          map.flyTo({ center: [lon, lat], zoom: 6, essential: true });
         }
       });
   }
@@ -165,4 +179,3 @@ document.addEventListener("DOMContentLoaded", function () {
     alert("🎤 Voice input activated (placeholder)");
   });
 });
-
