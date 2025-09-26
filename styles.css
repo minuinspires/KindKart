@@ -141,8 +141,10 @@ img {
 #map {
   height: 400px;
   width: 100%;
-  border-radius: 12px;
-  margin-top: 10px;
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  background-color: #eaeaea; /* fallback color */
 }
 
 /* 🎁 Emoji Marker Styling */
