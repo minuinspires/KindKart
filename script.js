@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // 🌍 Initialize Mapbox
-  mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN'; // Replace with your token
+  mapboxgl.accessToken = 'pk.eyJ1IjoibWludWluc3BpcmVzIiwiYSI6ImNrbmZ2cWZ3ZzA1eGoyd3FzZ3Z4dWZ3bWgifQ.abc123'; // Replace with your actual token
   const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v11',
