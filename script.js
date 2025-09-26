@@ -6,6 +6,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19
 }).addTo(map);
 
+
 // ✅ Force Leaflet to recalculate size after layout
 window.addEventListener('load', () => {
   setTimeout(() => {
