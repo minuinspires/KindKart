@@ -83,6 +83,7 @@ button:hover {
   overflow-y: auto;
   border-radius: 8px;
   margin-bottom: 10px;
+  scroll-behavior: smooth;
 }
 
 /* 📜 List Styling */
@@ -132,6 +133,7 @@ img {
 /* 🗺️ Leaflet Map Styling */
 #map {
   height: 400px;
+  width: 100%;
   border-radius: 12px;
   margin-top: 10px;
 }
@@ -143,4 +145,7 @@ img {
   user-select: none;
   text-align: center;
   line-height: 1;
+  background: white;
+  border-radius: 50%;
+  padding: 2px;
 }
