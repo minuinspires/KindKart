@@ -1,13 +1,12 @@
 body {
   font-family: 'Quicksand', sans-serif;
-  background: #fefcfb;
+  background: linear-gradient(to bottom, #fffaf0, #ffe4e1);
   margin: 0;
   padding: 0;
   color: #333;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
 }
 
 header {
