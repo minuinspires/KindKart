@@ -1,53 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // 🌍 Initialize Leaflet Map
-  const map = L.map('map').setView([20.5937, 78.9629], 5);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; OpenStreetMap contributors',
-  maxZoom: 19
-}).addTo(map);
-
-
-// ✅ Force Leaflet to recalculate size after layout
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    map.invalidateSize();
-  }, 500);
-});
-
-
-  // 🎁 Add Emoji Marker with Voiceover
-  function addMapMarker(location, name, desc) {
-    fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(location)}`)
-      .then(res => res.json())
-      .then(data => {
-        if (data.length > 0) {
-          const { lat, lon } = data[0];
-          const marker = L.marker([lat, lon], {
-            icon: L.divIcon({
-              className: 'emoji-marker',
-              html: '🎁',
-              iconSize: [24, 24],
-              popupAnchor: [0, -10]
-            })
-          }).addTo(map);
-
-          marker.bindPopup(`<strong>${name}</strong><br>${desc}<br>${location}`).openPopup();
-
-          marker.on('click', () => {
-            const audio = new Audio('voice/kindness.mp3'); // Replace with your voice file
-            audio.play();
-          });
-
-          map.flyTo([lat, lon], 6);
-        }
-      });
-  }
-
-  // DOM Elements
-  const locationInput = document.getElementById('location');
   const form = document.getElementById('form');
   const itemName = document.getElementById('itemName');
   const itemDesc = document.getElementById('itemDesc');
+  const locationInput = document.getElementById('location');
   const itemsList = document.getElementById('items');
   const exportBtn = document.getElementById('exportBtn');
   const printBtn = document.getElementById('printBtn');
@@ -62,14 +17,6 @@ window.addEventListener('load', () => {
 
   let userActions = { donations: 0 };
 
-  // 🎉 Confetti Celebration
-  function triggerConfetti() {
-    if (typeof confetti === 'function') {
-      confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
-    }
-  }
-
-  // 🟢 Donation Submission
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     const name = itemName.value.trim();
@@ -81,19 +28,15 @@ window.addEventListener('load', () => {
       addItemToList(item);
       form.reset();
       userActions.donations++;
-      triggerConfetti();
-      addMapMarker(loc, name, desc);
     }
   });
 
-  // 🟢 Add Item with Animation
   function addItemToList(item) {
     const li = document.createElement('li');
     li.innerHTML = `<strong>${item.name}</strong><br/><em>${item.desc}</em><br/>📍 ${item.location}<br/>🕒 ${item.timestamp}`;
     itemsList.prepend(li);
   }
 
-  // 🧾 Certificate Export
   exportBtn.addEventListener('click', () => {
     const donorName = donorNameInput.value.trim() || "Anonymous";
     const html = `
@@ -117,7 +60,6 @@ window.addEventListener('load', () => {
     link.click();
   });
 
-  // 🖨️ Print Certificate
   printBtn.addEventListener('click', () => {
     const donorName = donorNameInput.value.trim() || "Anonymous";
     const htmlContent = `
@@ -140,7 +82,6 @@ window.addEventListener('load', () => {
     printWindow.document.close();
   });
 
-  // 💬 Kindness Wall
   noteForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const note = noteText.value.trim();
@@ -152,38 +93,8 @@ window.addEventListener('load', () => {
     }
   });
 
-  // 🤖 Chatbot Logic
   function getBotReply(message) {
     const msg = message.toLowerCase();
     if (msg.includes("kindkart")) {
       return "KindKart is a platform that turns forgotten items into acts of kindness!";
-    } else if (msg.includes("how does it work")) {
-      return "Just list an item, and KindKart helps connect it to someone who needs it.";
-    } else if (msg.includes("who made this")) {
-      return "KindKart was created by Minu Antony, an 18-year-old BTech student passionate about kindness and tech!";
-    } else {
-      return "Thanks for your message! KindKart is here to help.";
-    }
-  }
-
-  sendBtn.addEventListener('click', () => {
-    const userMsg = chatInput.value.trim();
-    if (userMsg) {
-      const userDiv = document.createElement('div');
-      userDiv.textContent = `🗨️ You: ${userMsg}`;
-      chatWindow.appendChild(userDiv);
-
-      const botReply = getBotReply(userMsg);
-      const botDiv = document.createElement('div');
-      botDiv.textContent = `🤖 KindKart: ${botReply}`;
-      chatWindow.appendChild(botDiv);
-
-      chatInput.value = '';
-      chatWindow.scrollTop = chatWindow.scrollHeight;
-    }
-  });
-
-  voiceBtn.addEventListener('click', () => {
-    alert("🎤 Voice input activated (placeholder)");
-  });
-});
+    } else if (msg.includes("how does

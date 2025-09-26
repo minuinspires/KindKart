@@ -1,160 +1,115 @@
-/* ✅ Ensure Map Container Renders Properly */
-html, body, #map {
-  min-height: 400px;
-  height: 100%;
-  width: 100%;
-  display: block;
-}
-
-/* 🌈 Global Styles */
-html, body {
-  margin: 0;
-  padding: 0;
+/* 🌟 Base Styles */
+body {
   font-family: 'Quicksand', sans-serif;
-  background: linear-gradient(to right, #fceabb, #f8b500);
+  background-color: #fff8dc;
+  margin: 0;
+  padding: 20px;
   color: #333;
+  line-height: 1.6;
 }
 
-/* 🧢 Header */
-header {
+header, section, footer {
+  margin-bottom: 40px;
   text-align: center;
-  padding: 30px;
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-h1 {
-  font-size: 2.5rem;
-  color: #ff6f61;
+h1, h2 {
+  color: #4caf50;
   margin-bottom: 10px;
 }
 
 p {
-  font-size: 1.2rem;
-  color: #555;
+  margin: 0 0 10px;
 }
 
-/* 🧾 Card Layout */
-.card {
-  background: #ffffff;
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 600px;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-/* ✍️ Form Elements */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-input, textarea {
-  width: 100%;
+/* 🧾 Form Elements */
+input, button {
   padding: 10px;
+  margin: 5px;
   border-radius: 8px;
   border: 1px solid #ccc;
-  font-size: 1rem;
+  font-size: 16px;
+  width: 80%;
+  max-width: 400px;
   box-sizing: border-box;
-  background: #fff;
 }
 
-textarea {
-  resize: vertical;
-  min-height: 80px;
-}
-
-/* 🎯 Buttons */
 button {
-  background: #ff6f61;
+  background-color: #4caf50;
   color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background: #e85c50;
+  background-color: #45a049;
 }
 
-/* 💬 Chat Window */
-#chatWindow {
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  padding: 10px;
-  height: 150px;
-  overflow-y: auto;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  scroll-behavior: smooth;
-}
-
-/* 📜 List Styling */
+/* 📋 Lists */
 ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
 }
 
 li {
-  background: #fff8dc;
-  margin: 10px 0;
+  background: #f0f0f0;
+  margin: 10px auto;
   padding: 10px;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  max-width: 600px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* 🧦 Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #fff;
-  font-size: 0.9rem;
-  color: #666;
-  box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
+/* 💬 Chatbot */
+#chatWindow {
+  max-height: 200px;
+  overflow-y: auto;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 0 auto 10px;
+  max-width: 600px;
+  text-align: left;
 }
 
-/* ✨ Floating Animation for Images */
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-  100% { transform: translateY(0); }
+#chatInput {
+  width: 70%;
+  max-width: 400px;
 }
 
-img {
-  animation: float 3s ease-in-out infinite;
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+#sendBtn, #voiceBtn {
+  width: auto;
+  margin-left: 5px;
 }
 
-/* 🌟 Kindness Spotlight Styling */
-#spotlightList li {
-  background: #e0ffe0;
-  border-left: 5px solid #4caf50;
+/* 📜 Certificate Section */
+.certificate input {
+  margin-bottom: 10px;
 }
 
-/* 🗺️ Leaflet Map Styling */
-#map {
-  height: 400px;
-  width: 100%;
-  display: block;
-  visibility: visible;
-  opacity: 1;
-  background-color: #eaeaea; /* fallback color */
+.certificate button {
+  margin: 5px;
 }
 
-/* 🎁 Emoji Marker Styling */
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  input, button {
+    width: 100%;
+  }
+
+  #chatInput {
+    width: 100%;
+  }
+
+  #sendBtn, #voiceBtn {
+    width: 48%;
+  }
+}
+
+/* 🎁 Emoji Marker (if re-added later) */
 .emoji-marker {
   font-size: 24px;
-  cursor: pointer;
   user-select: none;
-  text-align: center;
-  line-height: 1;
-  background: white;
-  border-radius: 50%;
-  padding: 2px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
