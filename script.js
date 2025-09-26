@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   // 🌍 Initialize Leaflet Map
   const map = L.map('map').setView([20.5937, 78.9629], 5);
-  L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://stamen.com/">Stamen Design</a>',
-    maxZoom: 20
-  }).addTo(map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors',
+  maxZoom: 19
+}).addTo(map);
+
 
   // 🎁 Add Emoji Marker with Voiceover
   function addMapMarker(location, name, desc) {
