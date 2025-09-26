@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   // 🌍 Initialize Leaflet Map
   const map = L.map('map').setView([20.5937, 78.9629], 5);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-  attribution: '&copy; OpenStreetMap & CartoDB',
-  subdomains: ['a', 'b', 'c'],
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+  attribution: 'Tiles &copy; Esri',
   maxZoom: 19
 }).addTo(map);
+
 
 
 
