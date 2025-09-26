@@ -5,6 +5,12 @@ body {
   margin: 0;
   padding: 0;
   color: #333;
+
+  /* 🌐 Center the entire page content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 /* 🔥 Header with Animated Title */
@@ -38,7 +44,7 @@ header h1 {
 .animated-image {
   display: block;
   margin: 30px auto;
-  width: 320px; /* Increased from 200px */
+  width: 320px;
   max-width: 90%;
   animation: fadeInScale 2s ease-in-out;
 }
@@ -50,9 +56,18 @@ header h1 {
 
 /* 📦 Section Layout */
 section {
-  padding: 20px;
+  width: 90%;
   max-width: 600px;
-  margin: auto;
+  margin: 20px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+/* 🧾 Center form elements */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* 🧾 Form Inputs and Buttons */
@@ -60,6 +75,7 @@ input, button {
   padding: 10px;
   margin: 5px 0;
   width: 100%;
+  max-width: 500px;
   font-size: 1em;
   border-radius: 6px;
   border: 1px solid #ccc;
@@ -93,7 +109,9 @@ li {
 /* 🗺️ Leaflet Map */
 #map {
   height: 300px;
-  margin-top: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
@@ -105,7 +123,9 @@ li {
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  margin-top: 20px;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 600px;
 }
 
 .certificate-preview h1 {
@@ -123,6 +143,7 @@ li {
   margin-bottom: 10px;
 }
 
+/* 🧠 Footer */
 footer {
   text-align: center;
   padding: 20px;
