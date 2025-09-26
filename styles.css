@@ -1,6 +1,13 @@
+/* ✅ Ensure Map Container Renders Properly */
+html, body, #map {
+  min-height: 400px;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
 /* 🌈 Global Styles */
 html, body {
-  height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Quicksand', sans-serif;
