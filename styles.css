@@ -1,19 +1,15 @@
-/* 🌈 Base Styles */
 body {
   font-family: 'Quicksand', sans-serif;
   background: #fefcfb;
   margin: 0;
   padding: 0;
   color: #333;
-
-  /* 🌐 Center the entire page content */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
 }
 
-/* 🔥 Header with Animated Title */
 header {
   text-align: center;
   padding: 40px 20px;
@@ -40,7 +36,6 @@ header h1 {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* 🎞️ PNG Animation */
 .animated-image {
   display: block;
   margin: 30px auto;
@@ -54,7 +49,6 @@ header h1 {
   100% { opacity: 1; transform: scale(1); }
 }
 
-/* 📦 Section Layout */
 section {
   width: 90%;
   max-width: 600px;
@@ -63,14 +57,12 @@ section {
   padding: 20px;
 }
 
-/* 🧾 Center form elements */
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* 🧾 Form Inputs and Buttons */
 input, button {
   padding: 10px;
   margin: 5px 0;
@@ -92,7 +84,6 @@ button:hover {
   background-color: #45a049;
 }
 
-/* 📍 Donation List */
 ul {
   list-style: none;
   padding: 0;
@@ -106,7 +97,6 @@ li {
   border-radius: 8px;
 }
 
-/* 🗺️ Leaflet Map */
 #map {
   height: 300px;
   width: 100%;
@@ -116,7 +106,6 @@ li {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* 🧾 Certificate Preview */
 .certificate-preview {
   background: #fff8dc;
   padding: 30px;
@@ -133,7 +122,6 @@ li {
   font-size: 2em;
 }
 
-/* 💬 Chatbot and Kindness Wall */
 #chatWindow {
   background: #f0f0f0;
   padding: 10px;
@@ -143,7 +131,6 @@ li {
   margin-bottom: 10px;
 }
 
-/* 🧠 Footer */
 footer {
   text-align: center;
   padding: 20px;
