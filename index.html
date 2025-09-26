@@ -4,87 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KindKart</title>
-  <meta name="description" content="KindKart is a kindness-powered donation platform built by Minu Antony. List items, spread joy, and celebrate generosity." />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 <body>
   <header>
-    <h1>KindKart</h1>
-    <p>Turning forgotten things into unforgettable kindness 💖</p>
+    <h1>KindKart 💖</h1>
+    <p>Turning forgotten things into unforgettable kindness</p>
   </header>
 
-  <main>
-    <section class="card">
-      <h2>Kindness in Motion 🧸</h2>
-      <img src="images/Copilot_20250914_222749.png" alt="Kids and families playing with donated items" />
-      <p style="text-align:center; font-size:1.1rem; margin-top:10px;">
-        Every donation brings joy, laughter, and connection. Thank you for making kindness come alive.
-      </p>
-    </section>
+  <section class="donation-form">
+    <h2>List an Item</h2>
+    <form id="form">
+      <input type="text" id="itemName" placeholder="Item Name" required />
+      <input type="text" id="itemDesc" placeholder="Short Description" required />
+      <input type="text" id="location" placeholder="Your City" required />
+      <button type="submit">Donate</button>
+    </form>
+  </section>
 
-    <section class="card">
-      <h2>List an Item</h2>
-      <form id="form" aria-label="Donation Form">
-        <input type="text" id="itemName" placeholder="Item Name" required />
-        <input type="text" id="itemDesc" placeholder="Short Description" required />
-        <input type="text" id="location" placeholder="Your City" required />
-        <button type="submit" id="donateBtn">Donate</button>
-      </form>
-      <ul id="items"></ul>
-    </section>
+  <section class="donation-list">
+    <h2>📍 Kindness Spotlight</h2>
+    <ul id="items"></ul>
+  </section>
 
-    <section class="card">
-      <h2>📍 Kindness Spotlight</h2>
-      <ul id="spotlightList">
-        <li><strong>Books for Kids</strong> – Donated in Kochi 🕒 Sep 14, 2025</li>
-        <li><strong>Winter Jackets</strong> – Donated in Shimla 🕒 Sep 13, 2025</li>
-        <li><strong>Toys & Games</strong> – Donated in Hyderabad 🕒 Sep 12, 2025</li>
-      </ul>
-      <p style="text-align:center; font-size:1rem; color:#666;">
-        Every item listed here brought joy to a new home. Want to be featured? Just donate!
-      </p>
-    </section>
+  <section class="certificate">
+    <h2>🧾 Kindness Certificate</h2>
+    <input type="text" id="donorName" placeholder="Enter your name for certificate" />
+    <button id="exportBtn">Download Certificate</button>
+    <button id="printBtn">Print Certificate</button>
+  </section>
 
-    <section class="card">
-      <h2>🗺️ Live Kindness Map</h2>
-      <div id="map"></div>
-    </section>
+  <section class="kindness-wall">
+    <h2>💬 Kindness Wall</h2>
+    <form id="noteForm">
+      <input type="text" id="noteText" placeholder="Leave a thank-you note..." required />
+      <button type="submit">Post Note</button>
+    </form>
+    <ul id="notesList"></ul>
+  </section>
 
-    <section class="card">
-      <h2>🧾 Kindness Certificate</h2>
-      <input type="text" id="donorName" placeholder="Enter your name for certificate" />
-      <button id="exportBtn">Download Certificate</button>
-      <button id="printBtn">Print Certificate</button>
-    </section>
-
-    <section class="card">
-      <h2>💬 Kindness Wall</h2>
-      <form id="noteForm">
-        <textarea id="noteText" placeholder="Leave a thank-you note..." required></textarea>
-        <button type="submit" id="postNoteBtn">Post Note</button>
-      </form>
-      <ul id="notesList"></ul>
-    </section>
-
-    <section class="card">
-      <h2>KindKart Assistant 🤖</h2>
-      <div id="chatWindow"></div>
-      <input type="text" id="chatInput" placeholder="Ask me anything..." />
-      <button id="sendBtn">Send</button>
-      <button id="voiceBtn">🎤 Speak</button>
-    </section>
-  </main>
+  <section class="chatbot">
+    <h2>KindKart Assistant 🤖</h2>
+    <div id="chatWindow"></div>
+    <input type="text" id="chatInput" placeholder="Ask me anything..." />
+    <button id="sendBtn">Send</button>
+    <button id="voiceBtn">🎤 Speak</button>
+  </section>
 
   <footer>
     <p>Made with ❤️ by Minu Antony – 18-year-old BTech 2nd-year student</p>
     <p>📧 Reach out: minuinspires@gmail.com</p>
   </footer>
 
+  <!-- ✅ Cache-busted script reference -->
   <script src="script.js?v=2"></script>
-
 </body>
 </html>
