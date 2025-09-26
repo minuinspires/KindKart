@@ -5,98 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KindKart</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
-    body {
-      font-family: 'Quicksand', sans-serif;
-      background: #fefcfb;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-
-    header {
-      text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    header h1 {
-      font-size: 3em;
-      background: linear-gradient(to right, #ff6a00, #ee0979);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: pulse 3s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .animated-image {
-      display: block;
-      margin: 20px auto;
-      width: 200px;
-      animation: fadeInScale 2s ease-in-out;
-    }
-
-    @keyframes fadeInScale {
-      0% { opacity: 0; transform: scale(0.8); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-
-    section {
-      padding: 20px;
-      max-width: 600px;
-      margin: auto;
-    }
-
-    input, button {
-      padding: 10px;
-      margin: 5px 0;
-      width: 100%;
-      font-size: 1em;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      background: #fff;
-      border: 1px solid #ddd;
-      padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 8px;
-    }
-
-    .certificate-preview {
-      background: #fff8dc;
-      padding: 30px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    #map {
+      height: 300px;
       margin-top: 20px;
-    }
-
-    .certificate-preview h1 {
-      color: #4caf50;
-      font-size: 2em;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #f0f0f0;
-      font-size: 0.9em;
+      border-radius: 12px;
     }
   </style>
 </head>
@@ -115,6 +29,11 @@
       <input type="text" id="location" placeholder="Your City" required />
       <button type="submit">Donate</button>
     </form>
+  </section>
+
+  <section class="map-section">
+    <h2>🗺️ Kindness Map</h2>
+    <div id="map"></div>
   </section>
 
   <section class="donation-list">
@@ -160,20 +79,7 @@
     <p>📧 Reach out: minuinspires@gmail.com</p>
   </footer>
 
-  <script src="script.js?v=2"></script>
-  <script>
-    // Live preview for certificate
-    const donorNameInput = document.getElementById('donorName');
-    const previewName = document.getElementById('previewName');
-    const previewCount = document.getElementById('previewCount');
-    const previewDate = document.getElementById('previewDate');
-
-    donorNameInput.addEventListener('input', () => {
-      previewName.textContent = donorNameInput.value || "Anonymous";
-    });
-
-    previewDate.textContent = new Date().toLocaleDateString();
-    // You can update previewCount dynamically from your script.js logic
-  </script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
