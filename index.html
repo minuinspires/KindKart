@@ -7,7 +7,9 @@
   <meta name="description" content="KindKart is a kindness-powered donation platform built by Minu Antony. List items, spread joy, and celebrate generosity." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.js"></script>
 </head>
 <body>
   <header>
@@ -48,6 +50,11 @@
     </section>
 
     <section class="card">
+      <h2>🗺️ Live Kindness Map</h2>
+      <div id="map" style="height: 400px; border-radius: 12px;"></div>
+    </section>
+
+    <section class="card">
       <h2>🧾 Kindness Certificate</h2>
       <input type="text" id="donorName" placeholder="Enter your name for certificate" aria-label="Donor Name" />
       <button id="exportBtn">Download Certificate</button>
@@ -76,5 +83,7 @@
     <p>Made with ❤️ by Minu Antony – 18-year-old BTech 2nd-year student</p>
     <p>📧 Reach out: minuinspires@gmail.com</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
